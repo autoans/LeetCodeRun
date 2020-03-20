@@ -6,47 +6,40 @@ import java.util.Stack;
 
 public class Traversal {
     public List<Integer> inorderTraversal(TreeNode root) {
-        Stack<TreeNode> s = new Stack<TreeNode>();
+        Stack<TreeNode> treeNodes = new Stack<TreeNode>();
         List<Integer> result = new ArrayList<Integer>();
-        
-        while (root != null || !s.isEmpty())
-        {
-            if (root != null)
-            {
-                s.push(root);
+
+        while (root != null || !treeNodes.isEmpty()) {
+            if (root != null) {
+                treeNodes.push(root);
                 root = root.left;
-            }
-            else
-            {
-                root = s.pop();
+            } else {
+                root = treeNodes.pop();
                 result.add(root.val);
                 root = root.right;
             }
         }
-        
+
         return result;
     }
-    
+
     public List<Integer> preorderTraversal(TreeNode root) {
-        Stack<TreeNode> s = new Stack<TreeNode>();
+        Stack<TreeNode> treeNodes = new Stack<TreeNode>();
         List<Integer> result = new ArrayList<Integer>();
-        s.push(root);
-        
-        while (!s.isEmpty())
-        {
-            TreeNode n = s.pop();
+        treeNodes.push(root);
+
+        while (!treeNodes.isEmpty()) {
+            TreeNode n = treeNodes.pop();
             result.add(n.val);
-            
-            if (n.right != null)
-            {
-                s.push(n.right);
+
+            if (n.right != null) {
+                treeNodes.push(n.right);
             }
-            if (n.left != null)
-            {
-                s.push(n.left);
+            if (n.left != null) {
+                treeNodes.push(n.left);
             }
         }
-        
+
         return result;
     }
 }
