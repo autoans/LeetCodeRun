@@ -8,9 +8,9 @@ public class QuickSort {
      * @param r: ending index
      */
     public int partition(int[] arr, int p, int r) {
-        int i = -1;
+        int i = p-1;
         int pivot = arr[r];
-        for (int j = p; j < r-1; j++) {
+        for (int j = p; j < r; j++) {
             if (arr[j] <= pivot) {
                 i++;
                 
@@ -30,8 +30,15 @@ public class QuickSort {
     public void quickSort(int[] arr, int p, int r) {
         if (p < r) {
             int pivotIndex = partition(arr, p, r);
-            quickSort(arr, p, pivotIndex);
-            quickSort(arr, pivotIndex, r);
+            quickSort(arr, p, pivotIndex-1);
+            quickSort(arr, pivotIndex+1, r);
         }
+    }
+    
+    public static void main(String[] args) {
+        QuickSort qs = new QuickSort();
+        int[] arr = {5,3,8,7,90,4,11,89,35};
+        qs.quickSort(arr, 0, arr.length-1);
+        HeapSort.printArray(arr);
     }
 }
