@@ -1,5 +1,7 @@
 package sort;
 
+import utility.IO;
+
 public class QuickSort {
     /**
      * Partition an arr within index [p, r], both inclusive
@@ -39,6 +41,6 @@ public class QuickSort {
         QuickSort qs = new QuickSort();
         int[] arr = {5,3,8,7,90,4,11,89,35};
         qs.quickSort(arr, 0, arr.length-1);
-        HeapSort.printArray(arr);
+        IO.printArray(arr);
     }
 }
