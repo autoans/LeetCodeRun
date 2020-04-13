@@ -1,5 +1,9 @@
 package sort;
 
+import java.util.List;
+
+import utility.IO;
+
 public class HeapSort {
     /**
      * Use heap sort to sort an arr in asc order
@@ -57,16 +61,7 @@ public class HeapSort {
             max_heapify(arr, n, max_index);
         }
     }
-    
-    /** A utility function to print array of size n.
-     */
-    static void printArray(int arr[]) 
-    { 
-        int n = arr.length; 
-        for (int i=0; i<n; ++i) 
-            System.out.print(arr[i]+" "); 
-        System.out.println(); 
-    }
+
     
     public static void main(String[] args) {
         int[] arr = {5,3,8,7,90,4,11,89,35};
@@ -74,6 +69,6 @@ public class HeapSort {
         HeapSort hs = new HeapSort();
         hs.heap_sort(arr);
         
-        printArray(arr);
+        IO.printArray(arr);
     }
 }
