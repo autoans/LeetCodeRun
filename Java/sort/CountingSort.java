@@ -1,5 +1,7 @@
 package sort;
 
+import utility.IO;
+
 public class CountingSort {
     /**
      * Counting sort determines, for each input element x, the number of elements less than x.
@@ -32,6 +34,6 @@ public class CountingSort {
         int k = 6;
         cs.countingSort(arrA, arrB, k);
         
-        HeapSort.printArray(arrB);
+        IO.printArray(arrB);
     }
 }
