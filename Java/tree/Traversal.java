@@ -40,7 +40,7 @@ public class Traversal {
         
         return list;
     }
-    
+
     public List<Integer> preorderTraversal(TreeNode root) {
         Stack<TreeNode> treeNodes = new Stack<TreeNode>();
         List<Integer> result = new ArrayList<Integer>();

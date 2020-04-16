@@ -59,6 +59,6 @@ public class ProductExceptSelf {
     
     public static void main(String[] args) {
         ProductExceptSelf pe = new ProductExceptSelf();
-        pe.productExceptSelf(nums);
+        
     }
 }
