@@ -40,10 +40,8 @@ public class ClosedIslands {
     }
     
     public void dfs(int m, int n, int i, int j) {
-        if (i < 0 || i >=m || j < 0 || j >= n)
+        if (i < 0 || i >=m || j < 0 || j >= n || islands[i][j] == 1)
             return;
-        
-        if (islands[i][j] == 1) return;
         
         // change 0 to 1 in place
         islands[i][j] = 1;
