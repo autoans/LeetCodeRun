@@ -9,6 +9,7 @@ public class MaximalSquare {
     public int maximalSquare(char[][] matrix) {
         if (matrix == null || matrix.length == 0) return 0;
 
+        // dp[i][j] represents the length of the square which lower right corner is located at (i, j).
         int[][] dp = new int[matrix.length+1][matrix[0].length+1];
         int result = 0;
         for (int i = 1 ; i < matrix.length+1; i++) {
